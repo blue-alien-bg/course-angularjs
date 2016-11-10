@@ -8,10 +8,14 @@
   </head>
   <body>
     <h1>Food control</h1>
-    </div>
-      <textarea  placeholder="banana, salad, stake" rows="8" cols="40" autofocus="autofocus"></textarea>
+    <div ng-controller="MsgController">
+      <textarea placeholder="banana, salad, steak" rows="8" cols="40" autofocus="autofocus" ng-model="myText"></textarea>
+      <!-- <input type="text" placeholder="banana, salad, steak" ng-model="myText"> -->
       <br>
-      <button type="button">Ceck if Too Much</button>
-    <div class="">
+      <button type="button" ng-click="tooMuch()">Ceck if Too Much</button>
+      <div>
+        {{message}}
+      </div>
+    </div>
   </body>
 </html>
