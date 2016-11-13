@@ -9,12 +9,15 @@
   <body>
     <h1>Food control</h1>
     <div ng-controller="MsgController">
-      <textarea placeholder="banana, salad, steak" rows="8" cols="40" autofocus="autofocus" ng-model="myText"></textarea>
+      <textarea placeholder="banana, salad, steak" rows="8" cols="40" autofocus="autofocus" ng-model="myText">*Does not consider ",," and ", ," as items.</textarea>
+      *Does not consider ",," and ", ," as items.
       <!-- <input type="text" placeholder="banana, salad, steak" ng-model="myText"> -->
       <br>
       <button type="button" ng-click="tooMuch()">Ceck if Too Much</button>
       <div>
-        {{message}}
+        <p style="color:{{colour}}">
+          {{message}}
+        </p>
       </div>
     </div>
   </body>
