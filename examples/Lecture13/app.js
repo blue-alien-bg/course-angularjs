@@ -3,11 +3,11 @@
 
   angular.module('MsgApp', [])
     .controller('MsgController', MsgController)
-    .filter('stuff', StuffFiletr)
-    .filter('custom', CustomFilter);
+    .filter('stuff', StuffFiletr) // Register and inject below to use in code and HTML
+    .filter('custom', CustomFilter); // Only register to use only in HTML
 
-  MsgController.$inject = ['$scope', '$filter', 'stuffFilter'];
-  function MsgController($scope, $filter, stuffFilter){
+  MsgController.$inject = ['$scope', '$filter', 'stuffFilter']; // Injection (minification proofing)
+  function MsgController($scope, $filter, stuffFilter){ // Injection (default injection)
     $scope.name = "Slav";
     $scope.state = "8";
     $scope.buttonText = "Flip Image";
@@ -40,8 +40,8 @@
     }
   }
 
-  function StuffFiletr(){
-    return function(input){
+  function StuffFiletr(){ // Filter Factory function, it creates the filtering function
+    return function(input){ // Real filtration happens here
       input = input || "";
       input = input.replace(/stuff/g, "things");
       return input;
