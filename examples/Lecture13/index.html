@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.2em;}</style>
+    <title>Custom Filters</title>
+  </head>
+  <body>
+    <h1>Custom Filters</h1>
+    <div ng-controller="MsgController">
+      {{name}} has a message for you: <br>
+      Original: {{sayMessage()}} <br>
+      BIG ORIGINAL: {{sayBigMessage()}}<br>
+      Filter: {{sayFilterMessage()}} <br>
+      BIG CUSTOM FILTER: {{sayMessage() | custom : "stuff" : "things" | uppercase}}
+      <div>
+        <button ng-click="flipImage()">{{buttonText}}</button>
+        Cost: {{imageCost | currency : "#blah" : 4}}
+        <br>
+        <img ng-src="images/aliensurface_project2 768x76{{state}}.jpg" height="256" width="256"/>
+      </div>
+    </div>
+  </body>
+</html>
