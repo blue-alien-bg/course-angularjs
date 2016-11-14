@@ -3,7 +3,8 @@
 
   angular.module('MsgApp', [])
     .controller('MsgController', MsgController)
-    .filter('stuff', StuffFiletr) // Register and inject below to use in code and HTML
+    .filter('stuff', StuffFiletr) // Register and inject below to use in code and HTML (if registered with X,
+                                  // it should be used with XFilter in code and with X in HTML)
     .filter('custom', CustomFilter); // Only register to use only in HTML
 
   MsgController.$inject = ['$scope', '$filter', 'stuffFilter']; // Injection (minification proofing)
