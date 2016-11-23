@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Custom Service</title>
+  </head>
+  <body>
+    <h1>Custome Service</h1>
+    <div ng-controller="ShoppingListAddController as itemAdder">
+      <input type="text" ng-model="itemAdder.itemName" placeholder="Item name" autofocus="autofocus">
+      <input type="text" ng-model="itemAdder.itemQuantity" placeholder="Item quantity">
+      <button ng-click="itemAdder.addItem();">Add Item to Shopping List</button>
+    </div>
+    <div ng-controller="ShoppingListShowController as showList">
+      <ol>
+        <li ng-repeat="item in showList.items">
+          {{item.quantity}} of {{item.name}}
+          <button ng-click="showList.removeItem($index)">Remove</button>
+        </li>
+      </ol>
+    </div>
+    <!-- <div ng-controller="ShoppingListRemoveController as itemRemover">
+      <input type="text" ng-model="itemRemover.itemIndex" placeholder="Index of item to remove">
+      <button ng-click="itemRemover.removeItem()">Remove Item from Shopping List</button>
+    </div> -->
+  </body>
+</html>
