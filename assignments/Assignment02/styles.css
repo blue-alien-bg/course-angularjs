@@ -1,0 +1,14 @@
+body {
+  font-size: 1.2em;
+}
+#toBuy, #bought {
+  width: 30%;
+  float: left;
+}
+#bought {
+  margin-left: 40px;
+}
+
+.message {
+  color: blue;
+}

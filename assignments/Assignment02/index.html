@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListsApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Lists App</title>
+  </head>
+  <body>
+    <h1>Shopping Lists App</h1>
+    <div id="toBuy" ng-controller="ToBuyListController as toBuy">
+      <h3>To Buy</h3>
+      <ol>
+        <li ng-repeat="item in toBuy.items">Buy {{item.quantity}} {{item.name}}
+        <button ng-click="toBuy.moveItem($index);">Bought</button></li>
+      </ol>
+      <div class="message" ng-show="toBuy.items.length < 1">{{toBuy.message}}</div>
+    </div>
+    <div id="bought" ng-controller="AlreadyBoughtListController as bought">
+      <h3>Already Bought</h3>
+      <ol>
+        <li ng-repeat="item in bought.items">Bought {{item.quantity}} {{item.name}}</li>
+      </ol>
+      <div class="message" ng-hide="bought.items.length > 0">{{bought.message}}</div>
+    </div>
+  </body>
+</html>
